@@ -1,7 +1,11 @@
 FROM docker.io/continuumio/anaconda3
 MAINTAINER SeongUk Moon <antegral@antegral.net>
+
+ENV FORCE_CUDA="1"
+ENV TORCH_CUDA_ARCH_LIST="5.2 6.0 6.1 7.0 7.5 8.0 8.6+PTX"
  
 RUN apt update
+RUN apt install -y gcc g++
 RUN conda create -n textgen python=3.10
 CMD conda init bash
 CMD conda activate textgen
