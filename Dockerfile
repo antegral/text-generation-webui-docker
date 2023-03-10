@@ -14,6 +14,5 @@ RUN cd text-generation-webui/repositories && git clone https://github.com/qwopqw
 RUN cd text-generation-webui/repositories/GPTQ-for-LLaMA && python setup_cuda.py install
 RUN pip uninstall transformers
 RUN pip install git+https://github.com/zphang/transformers@llama_push
-CMD cd / 
 RUN wget https://raw.githubusercontent.com/antegral/LLaMA-Autoinstall/main/start.sh && chmod a+x start.sh
-ENTRYPOINT start.sh
+ENTRYPOINT /start.sh
