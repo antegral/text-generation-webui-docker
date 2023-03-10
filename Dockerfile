@@ -1,4 +1,4 @@
-ROM docker.io/continuumio/anaconda3
+FROM docker.io/continuumio/anaconda3
 MAINTAINER SeongUk Moon <antegral@antegral.net>
  
 RUN apt update
