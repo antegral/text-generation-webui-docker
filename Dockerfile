@@ -8,9 +8,7 @@ RUN apt install -y gcc g++
 
 WORKDIR /var
 RUN wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
-RUN Anaconda3-2020.11-Linux-x86_64.sh
-RUN export $HOME/anaconda3/bin:$PATH
-RUN source ~/.bashrc
+RUN chmod a+x ./Anaconda3-2020.11-Linux-x86_64.sh && bash ./Anaconda3-2020.11-Linux-x86_64.sh -b -p $HOME/conda
 RUN mkdir /app
 
 WORKDIR /app
